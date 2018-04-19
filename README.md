@@ -4,7 +4,7 @@
 
 * [General Dynamic's challenge - Signature Search](./CHALLENGE.md)
 
-### Team
+## Team
 
 * Jason Brake
 * Aarshad Mahi
