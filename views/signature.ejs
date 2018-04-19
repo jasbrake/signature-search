@@ -1,0 +1,40 @@
+<html>
+<%- include('partials/head') %>
+<style>
+  body {
+    padding-top: 5rem;
+  }
+  .starter-template {
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+</style>
+<body>
+<%- include('partials/nav') %>
+<main role="main" class="container">
+  <div class="starter-template">
+    <!--<h1>Search for a Snort Signature by it's ID</h1>-->
+    <div class="card">
+    <div class="card-header">
+      <b><%= signature.sid + '-' + signature.rev %></b>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= signature.msg %></h5>
+      <hr>
+      <code>
+        <p class="card-text"><%= signature.rule %></p>
+      </code>
+      <hr>
+      <% if (user.role == 'admin') { %>
+        <a href="/editsignature/<%= signature.id %>" class="btn btn-primary">Edit</a>
+      <% } %>
+    </div>
+    <div class="card-footer text-muted">
+      <%= signature.class_type %>
+    </div>
+  </div>
+    <!--<p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>-->
+  </div>
+</main>
+</body>
+</html>

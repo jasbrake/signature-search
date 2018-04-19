@@ -1,0 +1,37 @@
+<html>
+<%- include('partials/head') %>
+<style>
+  body {
+    padding-top: 5rem;
+  }
+  .starter-template {
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+  .list-group-item {
+    margin-bottom: .5em !important;
+  }
+</style>
+<body>
+  <%- include('partials/nav') %>
+  <main role="main" class="container">
+    <div class="starter-template">
+      <h1>Results</h1>
+      <% if (results.length > 0) { %>
+      <% results.forEach(r => { %>
+        <div class="list-group">
+          <a href="/signatures/<%= r.id %>" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1"><%= r.sid + '-' + r.rev %></h5>
+              <small><%= r.class_type %></small>
+            </div>
+            <p class="mb-1"><%= r.msg %></p>
+            <!--<small>Donec id elit non mi porta.</small>-->
+          </a>
+        </div>
+      <% }) %>
+      <% } %>
+    </div>
+  </main><!-- /.container -->
+</body>
+</html>
